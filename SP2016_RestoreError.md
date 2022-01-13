@@ -1,10 +1,11 @@
 # SP2016 Restore Error
 ### Error: You must first restore the original parent site in order to restore the site "SB2".
 
-> - I have recently came accross this incident in SharePoint 2016 where user claims he is missing some files. 
-After some digging, I found those files in recycle bin. The user deleted the whole subsite called "SB2". 
-The parent site of this "SB2" is also a sub site and it's called "SB1". I found all the contents of "SB2" in the Site Collection level recycle bin but I found this "SB2" sub site in second-stage recycle bin.
-I tried to restore the "SB2" from second-stage recycle bin, but it returned an error *You must first restore the original parent site in order to restore the site "SB2".*
-I started troubleshooting from the top level site, I went into site contents of each site and observed the subsites and found out that "SB1" subsite url was changed from SB1 to "S".
-That is the reason the restore operation is failing to identify the parent site of "SB2".
-I changed the URL of parent site from 'S' to 'SB1' and tried to restore the 'SB2' sub site and it successfully restored.
+> - I recently came accross this incident in SharePoint 2016 where user claims he is missing some files. 
+> - After some digging, I found those files in recycle bin. The user deleted the whole subsite called "SB2". 
+> - I tried to restore the "SB2" from second-stage recycle bin (which is where I found this subsite), but it returned an error *You must first restore the original parent site in order to restore the site "SB2".*
+> - I observed the URL of the sub site in the recycle bin and found out the parent site which is also a sub site and it's called "SB1". 
+> - I found out the "SB1" sub site in site contents of the site collection. I went into that sub site and the URL caught my eye because it is not the same as the URL that I saw in recycle bin. It was changed from SB1 to "S".
+> - That is the reason the restore operation failed. It is failing to identify the parent site of "SB2".
+> - I changed the URL of parent site from 'S' to 'SB1' and tried to restore the 'SB2' sub site and it successfully restored.
+> - Then I restored all the files too.
