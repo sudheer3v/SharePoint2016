@@ -1,4 +1,4 @@
-# SP2016 Restore Error
+# SP2016 - Error while restoring a site from Recyclebin
 ### Error: You must first restore the original parent site in order to restore the site "SB2".
 
 > - I recently came accross this incident in SharePoint 2016 where user claims he is missing some files. 
