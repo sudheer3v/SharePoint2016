@@ -7,7 +7,7 @@ The main idea of this process is to create a running commentary functionality in
 1. Here I took 3 text fields and named them, Comment, Comment Store, Line Break Text Field.
 2. **Comment** field is for the User to write comments.
 3. **Comment Store** is to store the comment that a user inputs, its dynamic, Comment Store field changes every time Comment field is changed using a rule below.
-4. [Comment Store rule screenshot] (src/images/linebreak/1.jpg)
+4. ![Comment Store rule screenshot] (src/images/linebreak/1.jpg)
 5. **Line Break Text Field** displays all Previous Comments and Current Comment using CONCAT statement, in one box, with every comment in a new next line.
 6. For this to work, right click on the Line Break Text Field and select Text Box Properties, Under Display tab make sure Multi-Line is checked, this will make Text Box to Multi-line text field.
 7. [Multi Line setup] (src/images/linebreak/2.jpg)
