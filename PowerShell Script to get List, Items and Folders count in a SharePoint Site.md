@@ -35,7 +35,6 @@
                 
     }
    
-#Get-DocInventory | Out-GridView
-Get-DocInventory | Export-Csv -NoTypeInformation -Path C:\Reports\"$SiteID-$Date.csv"
-
-Stop-Transcript
+    #Get-DocInventory | Out-GridView
+    Get-DocInventory | Export-Csv -NoTypeInformation -Path C:\Reports\"$SiteID-$Date.csv"
+    Stop-Transcript
