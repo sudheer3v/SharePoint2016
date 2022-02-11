@@ -38,7 +38,7 @@
 
 
 ### ONLY DESIGN TEMPLATES PUBLISHING
-USE THIS IF THE ABOVE SCRIPT DON'T WORK#
+USE THIS IF THE ABOVE SCRIPT DON'T WORK
 
     $folder = $SPWeb.GetFolder("_catalogs/masterpage/Display Templates")
 
