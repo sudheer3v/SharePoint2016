@@ -1,15 +1,17 @@
-#Snap in
-Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
+# PowerShell Script to get all ID's of Sites and sub sites in SharePoint.
 
-$webapp = Get-SPWebApplication -Identity Intranet
+    #Snap in
+    Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
 
-foreach($sitecoll in $webapp.Sites)
-{
-    $site = Get-SPSite $sitecoll.Url
-    $web = Get-SPWeb $sitecoll.Url
-    write-host "Site: " + $site.id
-    write-host "Web: " + $web.id
+    $webapp = Get-SPWebApplication -Identity Intranet
 
-    $web.Dispose()
-    $site.Dispose()
-}
+    foreach($sitecoll in $webapp.Sites)
+    {
+        $site = Get-SPSite $sitecoll.Url
+        $web = Get-SPWeb $sitecoll.Url
+        write-host "Site: " + $site.id
+        write-host "Web: " + $web.id
+
+        $web.Dispose()
+        $site.Dispose()
+    }

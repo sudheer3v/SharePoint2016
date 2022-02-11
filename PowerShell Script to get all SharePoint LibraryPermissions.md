@@ -1,26 +1,28 @@
-#Snap in
-Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
+# PowerShell Script to get all SharePoint Library Permissions
 
-$url = "https://contoso.com/sites/testsite"
-$listName = "Test1";
+  #Snap in
+  Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
 
-$SPWeb = Get-SPWeb $url;
-$SPList = $SPWeb.Lists[$listName];
+  $url = "https://contoso.com/sites/testsite"
+  $listName = "Test1";
 
-#break inheritance
-$SPItem.BreakRoleInheritance($true)
- 
-#Remove all Permissions  
-for ($i = 0; $i -lt $SPItem.RoleAssignments.Count; $i++)
-{
-  try
+  $SPWeb = Get-SPWeb $url;
+  $SPList = $SPWeb.Lists[$listName];
+
+  #break inheritance
+  $SPItem.BreakRoleInheritance($true)
+  
+  #Remove all Permissions  
+  for ($i = 0; $i -lt $SPItem.RoleAssignments.Count; $i++)
   {
-    $SPItem.RoleAssignments.Remove($i)
+    try
+    {
+      $SPItem.RoleAssignments.Remove($i)
+    }
+    catch
+    {
+    }
   }
-  catch
-  {
-  }
-}
-$SPItem.Update()
+  $SPItem.Update()
 
 

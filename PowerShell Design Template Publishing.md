@@ -1,18 +1,20 @@
-#Snap in
-Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
+# PowerShell Script to Publish Design Templates in SharePoint Site
 
-$webUrl = "https://contoso.com/teams/testtemplate2"
-$web = get-spweb $webUrl
-$folder = $web.GetFolder("_catalogs/masterpage/Display Templates")
-$subfolders = $folder.SubFolders
+    #Snap in
+    Add-PSSnapin "Microsoft.SharePoint.PowerShell" -ErrorAction SilentlyContinue 
 
-foreach($sub in $subfolders)
-{
-    if($sub.Name -eq "Content Web Parts")
+    $webUrl = "https://contoso.com/teams/testtemplate2"
+    $web = get-spweb $webUrl
+    $folder = $web.GetFolder("_catalogs/masterpage/Display Templates")
+    $subfolders = $folder.SubFolders
+
+    foreach($sub in $subfolders)
     {
-        $sub.Files | ?{ $_.Item -ne $null -and $_.Item.Properties["HtmlDesignLockedFile"] -eq $null -and $_.MinorVersion -ne 0 } | %{
-        Write-Host ("Publishing {0}" -f $_.Url);
-        $_.Publish("design package deployment");
+        if($sub.Name -eq "Content Web Parts")
+        {
+            $sub.Files | ?{ $_.Item -ne $null -and $_.Item.Properties["HtmlDesignLockedFile"] -eq $null -and $_.MinorVersion -ne 0 } | %{
+            Write-Host ("Publishing {0}" -f $_.Url);
+            $_.Publish("design package deployment");
+            }
         }
     }
-}
