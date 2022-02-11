@@ -1,7 +1,7 @@
 # PowerShell script to alternate CSS Url of a SharePoint site
 
-  #add snapin
-  Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
+    #add snapin
+    Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
     
     #Enter the Target Site Below#
     $siteurl = "https://contoso.com/sites/Test7"
