@@ -7,7 +7,7 @@ First Connect to Site https://contoso.com/teams/site1
 - Create all the Content types you need for your lists
 - Assign all the site columns to site content types
 
-#snap in
+    #snap in
 Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue 
 
 #Connect to the Site Where you want to add Site Content Types
