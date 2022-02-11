@@ -19,9 +19,9 @@ Add-PnPField -DisplayName "Size" -InternalName "Size" -Type Number -Group "My Co
 #To Add New Content Types to Group and Parent as Item#
 Add-PnPContentType -Name "My Content Type" -Description "Custom Content type" -Group "My CT Group" -ParentContentType $Item
 
- #To Add Site Column to Content Type#
- Add-PnPFieldToContentType -Field "Size" -ContentType "My Content Type" 
- Add-PnPField -DisplayName "WebAppName" -InternalName "WebAppName" -Type Text -Group "My Columns" -Required 
- Add-PnPFieldToContentType -Field "WebAppName" -ContentType "My Content Type" 
- Add-PnPField -DisplayName "DB Status" -InternalName "DB Status" -Type Choice -Group "53 Columns" -Required -Choices "Full","Open"
- Add-PnPFieldToContentType -Field "DB Status" -ContentType "My Content Type" 
+   #To Add Site Column to Content Type#
+   Add-PnPFieldToContentType -Field "Size" -ContentType "My Content Type" 
+   Add-PnPField -DisplayName "WebAppName" -InternalName "WebAppName" -Type Text -Group "My Columns" -Required 
+   Add-PnPFieldToContentType -Field "WebAppName" -ContentType "My Content Type" 
+   Add-PnPField -DisplayName "DB Status" -InternalName "DB Status" -Type Choice -Group "53 Columns" -Required -Choices "Full","Open"
+   Add-PnPFieldToContentType -Field "DB Status" -ContentType "My Content Type" 
