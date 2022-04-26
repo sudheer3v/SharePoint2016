@@ -29,7 +29,7 @@ ForEach($site in $WebApp.Sites)
             {
 
                 $SiteDetails = New-Object PSObject
-    	          $SiteDetails | Add-Member Noteproperty -Name SiteURL $site.Url
+    	        $SiteDetails | Add-Member Noteproperty -Name SiteURL $site.Url
                 $SiteDetails | Add-Member Noteproperty -Name SC_PolicyName $SiteCollPolicy.PolicyList.Name
                 $SiteDetails | Add-Member Noteproperty -Name SC_PolicyID $SiteCollPolicy.PolicyList.Id
                 $SiteDetails | Add-Member Noteproperty -Name SC_PolicyModifiedBy $SiteCollPolicy.PolicyList.ModifiedBy
